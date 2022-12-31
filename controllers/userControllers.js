@@ -4,15 +4,20 @@ const jwt = require("jsonwebtoken");
 const jwtKey = "ACTIVITY";
 
 const signup = async (req, res) => {
-  const register = new Register(req.body);
-  const result = await register.save();
-  // console.log(result);
-  jwt.sign({ result }, jwtKey, { expiresIn: "1hr" }, (err, token) => {
-    if (err) {
-      res.send({ result: "something went wrong" });
-    }
-    res.send({ result, auth: token });
-  });
+  try {
+    const register = new Register(req.body);
+    const result = await register.save();
+
+    
+    jwt.sign({ result }, jwtKey, { expiresIn: "1hr" }, (err, token) => {
+      if (err) {
+        res.send({ result: "something went wrong" });
+      }
+      res.send({ result, auth: token });
+    });
+  } catch (error) {
+    res.status(400).json({ error: "User Already registered!" });
+  }
 };
 
 const login = async (req, res) => {
