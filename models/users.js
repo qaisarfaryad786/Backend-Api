@@ -6,8 +6,7 @@ const userSchema = new mongoose.Schema({
         type:String,
         unique:true
     },
-    password:String,
-    activities: []
+    password:String
 });
 
 const register = new mongoose.model("register",userSchema);
