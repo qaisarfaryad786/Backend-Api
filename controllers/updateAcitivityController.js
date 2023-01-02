@@ -1,8 +1,6 @@
 const Activity = require('../models/activity');
 
 const updateActivity = async (req,res)=> {
-        console.log(req.body);
-
         let id = req.body.id;
         let userId = req.body.userId;
 
