@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
 const userSchema = new mongoose.Schema({
-
-    activityName:{
+    id:{
+        type:Number,
+        required:true
+    },
+    name:{
         type:String,
         required:true
     },
@@ -20,6 +23,10 @@ const userSchema = new mongoose.Schema({
     },
     date:{
         type:Date,
+        required:true
+    },
+    userId:{
+        type:String,
         required:true
     }  
 });
