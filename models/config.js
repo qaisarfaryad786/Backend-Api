@@ -7,3 +7,7 @@ mongoose.connect("mongodb+srv://hamza786:contourisgreat@exercisetracker.qrxwi7s.
 }).catch((e)=>{
     console.log("Not connected with DB");
 })
+
+// mongodb+srv://hamza786:<password>@exercisetracker.qrxwi7s.mongodb.net/?retryWrites=true&w=majority
+
+// mongodb+srv://hamza786:contourisgreat@exercisetracker.qrxwi7s.mongodb.net
