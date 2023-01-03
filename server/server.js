@@ -15,7 +15,9 @@ const Register = require('../models/users');
 const port = 5000;
 
 // middlewares
-app.use(cors());
+app.use(cors({
+  origin:"*"
+}));
 app.use(express.json());
 app.use(router);
 
